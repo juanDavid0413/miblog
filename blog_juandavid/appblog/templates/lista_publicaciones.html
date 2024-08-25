@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PUBLICACIONES</title>
+</head>
+<body>
+    <h1>LISTA DE PUBLICACIONES</h1>
+    <form method="GET">
+        Fecha minima: <input type="date" name="fecha_min">
+        Fecha maxima: <input type="date" name="fecha_max">
+        <button type="submit">FILTRAR</button>
+    </form>
+    
+    <form method="GET">
+        Buscar por titulo o contenido: <input type="text" name="q">
+        <button type="submit">BUSCAR</button>
+    </form>
+
+    <ul>
+        {% for publicacion in publicaciones %}
+          <li>{{publicaciones.titulo}} - {{publicaciones.contenido}} - {{publicaciones.fecha_publicacion}} - {{publicaciones.fecha_categoria}} - {{publicaciones.autor}} </li>
+        {% endfor %}
+    </ul>
+    <div>
+        {% if publicaciones.has_previous %}
+          <a href="?page={{ publicaciones.previous_page_number }}">Anterior</a>
+        {% endif %}  
+    </div>
+
+    <a href="{% url 'agregar_publicacion' %}">Agregar Nueva Publicacion</a>
+    <a href="{% url 'lista_publicaciones' %}">Ver Publicaciones</a>
+</body>
+</html>

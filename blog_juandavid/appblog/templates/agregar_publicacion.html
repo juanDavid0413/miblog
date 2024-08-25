@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PUBLICAR</title>
+</head>
+<body>
+    <h1>AGREGAR PUBLICACION</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p}}
+      {% if form.errors %}
+        <ul>
+          {% for field in form %}
+            {% if field.errors %}
+            {% endif %}
+          {% endfor %}          
+        </ul>
+      {% endif %}
+      <button typr="submit">GUARDAR PUBLICACION</button>  
+    </form>
+    <a href="{% url 'lista_publicaciones' %}">Ver Publicaciones</a>
+    <a href="{% url 'inicio' %}"><button>Ir a inicio </button></a>
+</body>
+</html>
