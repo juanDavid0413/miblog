@@ -18,16 +18,25 @@
 
     <ul>
         {% for publicacion in publicaciones %}
-          <li>{{publicaciones.titulo}} - {{publicaciones.contenido}} - {{publicaciones.fecha_publicacion}} - {{publicaciones.fecha_categoria}} - {{publicaciones.autor}} </li>
+          <li>{{publicacion.titulo}} - {{publicacion.autor}} </li>
         {% endfor %}
     </ul>
     <div>
         {% if publicaciones.has_previous %}
           <a href="?page={{ publicaciones.previous_page_number }}">Anterior</a>
         {% endif %}  
+    
+
+    <span>Página {{ publicaciones.number }} de {{ publicaciones.paginator.num_pages }}</span>
+
+         {% if publicaciones.has_next %}
+           <a href="?page={{ publicaciones.next_page_number }}">Siguiente</a>
+        {% endif %}
+
     </div>
 
     <a href="{% url 'agregar_publicacion' %}">Agregar Nueva Publicacion</a>
     <a href="{% url 'lista_publicaciones' %}">Ver Publicaciones</a>
+    <a href="{% url 'inicio' %}"><button>Ir a inicio </button></a>
 </body>
 </html>

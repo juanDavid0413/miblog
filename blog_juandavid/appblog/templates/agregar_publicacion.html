@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>AGREGAR PUBLICACION</h1>
+    <p>IMPORTANTE: La fecha debe ser ingresada en el formato: año-mes-dia</p>
     <form method="post">
       {% csrf_token %}
       {{ form.as_p}}
