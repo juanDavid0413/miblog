@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles</title>
+</head>
+<body>
+
+    <h1>{{ publicacion.titulo }}</h1>
+    
+    <p>{{ publicacion.contenido }}</p>
+    <p>FECHA DE PUBLICACION = {{ publicacion.fecha_publicacion }}</p>
+    <p>CATEGORIA = {{ publicacion.categoria }}</p>
+    <p>AUTOR = {{ publicacion.autor }}</p>
+
+    <ul>
+        <a href="{% url 'lista_publicaciones' %}">Ver Publicaciones</a>
+        <a href="{% url 'inicio' %}"><button>Ir a inicio </button></a>
+    </ul>
+
+</body>
+</html>

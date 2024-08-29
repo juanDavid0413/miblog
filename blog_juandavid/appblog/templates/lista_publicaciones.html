@@ -18,7 +18,7 @@
 
     <ul>
         {% for publicacion in publicaciones %}
-          <li>{{publicacion.titulo}} - {{publicacion.autor}} </li>
+          <li><a href="{% url 'detalle_publicacion' publicacion.pk %}">{{publicacion.titulo}}</a></li>
         {% endfor %}
     </ul>
     <div>
