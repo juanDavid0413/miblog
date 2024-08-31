@@ -13,6 +13,7 @@
     <p>AUTOR = {{ publicacion.autor }}</p>
 
     <ul>
+        <a href="{% url 'editar_publicacion' pk=publicacion.pk %}">Editar esta publicacion</a>
         <a href="{% url 'lista_publicaciones' %}">Ver Publicaciones</a>
         <a href="{% url 'inicio' %}"><button>Ir a inicio </button></a>
     </ul>

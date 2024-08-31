@@ -41,3 +41,15 @@ def agregar_publicacion(request):
 def detalle_publicacion(request, pk):
     publicacion = Publicacion.objects.get(pk=pk)
     return render(request, 'detalle_publicacion.html', {'publicacion': publicacion})
+
+def editar_publicacion( request, pk):
+    publicacion = Publicacion.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = PublicacionModelForm(request.POST, instance = publicacion)
+        if form.is_valid():
+            form.save()
+            return redirect('detalle_publicacion', pk=publicacion.pk)
+    else:
+        form = PublicacionModelForm(instance = publicacion)
+        
+    return render(request, 'editar_publicacion.html', {'form':form})

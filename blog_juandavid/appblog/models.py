@@ -8,5 +8,5 @@ class Publicacion(models.Model):
     autor = models.CharField(max_length=150)
 
     def __str__(self):
-        return str(self.nombre)
+        return str(self.titulo)
 

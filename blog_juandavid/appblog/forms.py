@@ -6,4 +6,4 @@ class PublicacionModelForm(forms.ModelForm):
         model = Publicacion
         fields = ['titulo','contenido','fecha_publicacion','categoria','autor']
 
-        
+
